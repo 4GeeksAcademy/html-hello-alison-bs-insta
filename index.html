@@ -1,52 +1,137 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script
-      src="https://kit.fontawesome.com/1b03d1a367.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container-fluid p-2 row">
-        <a class="navbar-brand m-0 col-9" href="#">
-            <i class="fa-brands fa-instagram"></i>
-          Instagram
-        </a>
-        <button type="button" class="btn btn-success col-2" data-bs-toggle="modal" data-bs-target="#createNewPost">
-            Create a new post
-          </button>
-          <div class="btn-group col-1">
-            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
-                <i class="fa-solid fa-gear"></i>
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li><a class="dropdown-item" href="#">Accesibility</a></li>
-                <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
-              </ul>
-          </div>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <script src="https://kit.fontawesome.com/1b03d1a367.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid p-2 row">
+      <a class="navbar-brand m-0 col-9" href="#">
+        <i class="fa-brands fa-instagram"></i>
+        Instagram
+      </a>
+      <button type="button" class="btn btn-success col-2" data-bs-toggle="modal" data-bs-target="#createNewPost">
+        Create a new post
+      </button>
+      <div class="btn-group col-1">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+          <i class="fa-solid fa-gear"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><a class="dropdown-item" href="#">Accesibility</a></li>
+          <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+        </ul>
       </div>
-    </nav>
-    <div class="m-3 d-grid gap-2 d-md-block text-center">
-        <button class="btn btn-link" type="button" onclick="document.location='index.html'"><i class="fa-solid fa-table-cells"></i></button>
-        <button class="btn btn-link" type="button" onclick="document.location='index2.html'"><i class="fa-solid fa-square"></i></button>
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <div class="modal" tabindex="-1" id="createNewPost">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fs-5" id="modalBasicLabel">Create a new post</h5>
+            <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <fieldset>
+              <h6>Caption:</h6>
+              <textarea id="postCation" class="w-100" placeholder="Add the caption of your post here"></textarea>
+            </fieldset>
+            <div class="icon-group ">
+              <button type="button"><i class="fa-solid fa-camera"></i></button>
+              <button type="button"><i class="fa-solid fa-location-dot"></i></button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-success">Publish</button>
+          </div>
+        </div>
+  </nav>
+  <!-- NavPills Buttons -->
+  <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+        type="button" role="tab" aria-controls="pills-home" aria-selected="true"><i
+          class="fa-solid fa-table-cells"></i></button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+        type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i
+          class="fa-solid fa-square"></i></button>
+    </li>
+  </ul>
+  <!-- NavPills Content -->
+  <div class="tab-content" id="pills-tabContent">
+    <!-- Grid -->
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+      tabindex="0">
+
+      <div class="row mb-4 px-5">
+        <div class="col"><img src="https://cdn.pixabay.com/photo/2020/11/20/16/26/labrador-5762115_1280.jpg"
+            style="width: 100%;"></div>
+        <div class="col"><img src="https://cdn.pixabay.com/photo/2020/11/20/16/26/labrador-5762115_1280.jpg"
+            style="width: 100%;"></div>
+        <div class="col"><img src="https://cdn.pixabay.com/photo/2020/11/20/16/26/labrador-5762115_1280.jpg"
+            style="width: 100%;"></div>
+      </div>
+      <div class="row mb-4 px-5">
+        <div class="col"><img src="https://cdn.pixabay.com/photo/2020/11/20/16/26/labrador-5762115_1280.jpg"
+            style="width: 100%;"></div>
+        <div class="col"><img src="https://cdn.pixabay.com/photo/2020/11/20/16/26/labrador-5762115_1280.jpg"
+            style="width: 100%;"></div>
+        <div class="col"><img src="https://cdn.pixabay.com/photo/2020/11/20/16/26/labrador-5762115_1280.jpg"
+            style="width: 100%;"></div>
+      </div>
+      <div class="row mb-4 px-5">
+        <div class="col"><img src="https://cdn.pixabay.com/photo/2020/11/20/16/26/labrador-5762115_1280.jpg"
+            style="width: 100%;"></div>
+        <div class="col"><img src="https://cdn.pixabay.com/photo/2020/11/20/16/26/labrador-5762115_1280.jpg"
+            style="width: 100%;"></div>
+        <div class="col"><img src="https://cdn.pixabay.com/photo/2020/11/20/16/26/labrador-5762115_1280.jpg"
+            style="width: 100%;"></div>
+      </div>
+
+    </div>
+    <!-- List -->
+    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+      <div class="container">
+        <div class="row mb-3">
+          <div class="col-12">
+            <img src="https://cdn.pixabay.com/photo/2020/11/20/16/26/labrador-5762115_1280.jpg" class="w-100 mb-2">
+          </div>
+          <div class="col-12">
+            <img src="https://cdn.pixabay.com/photo/2020/11/20/16/26/labrador-5762115_1280.jpg" class="w-100 mb-2">
+          </div>
+          <div class="col-12">
+            <img src="https://cdn.pixabay.com/photo/2020/11/20/16/26/labrador-5762115_1280.jpg" class="w-100 mb-2">
+          </div>
+          <div class="col-12">
+            <img src="https://cdn.pixabay.com/photo/2020/11/20/16/26/labrador-5762115_1280.jpg" class="w-100 mb-2">
+          </div>
+          <div class="col-12">
+            <img src="https://cdn.pixabay.com/photo/2020/11/20/16/26/labrador-5762115_1280.jpg" class="w-100 mb-2">
+          </div>
+          <div class="col-12">
+            <img src="https://cdn.pixabay.com/photo/2020/11/20/16/26/labrador-5762115_1280.jpg" class="w-100 mb-2">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>

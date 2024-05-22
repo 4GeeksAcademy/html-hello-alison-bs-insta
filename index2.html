@@ -14,6 +14,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="styles.css">
   </head>
 
   <body>
@@ -41,8 +42,32 @@
         </div>
       </nav>
       <div class="m-3 d-grid gap-2 d-md-block text-center">
-        <button class="btn btn-link" type="button" onclick="document.location='index.html'"><i class="fa-solid fa-table-cells"></i></button>
-        <button class="btn btn-link" type="button" onclick="document.location='index2.html'"><i class="fa-solid fa-square"></i></button>
+        <button class="btn btn-link" type="button" onclick="document.location='index.html'"><i class="fa-solid fa-table-cells switch-btn"></i></button>
+        <button class="btn btn-link" type="button" onclick="document.location='index2.html'"><i class="fa-solid fa-square switch-btn"></i></button>
+    </div>
+    <div class="modal" tabindex="-1" id="createNewPost">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fs-5" id="modalBasicLabel">Create a new post</h5>
+            <button type="button" class="btn-close" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <fieldset>
+              <h6>Caption:</h6>
+             <textarea id="postCation" cols="43" rows="2"></textarea>
+            </fieldset>
+            <div class="icon-group ">
+              <button type="button"><i class="fa-solid fa-camera"></i></button>
+              <button type="button"><i class="fa-solid fa-location-dot"></i></button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary">Close</button>
+            <button type="button" class="btn btn-success">Publish</button>
+          </div>
+        </div>
+      </div>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
